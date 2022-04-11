@@ -26,10 +26,12 @@ namespace asp_filmes.Models
         public string cod_ator { get; set; }
         [Required]
         [DisplayName("Nome do ator")]
-       public string nome_ator { get; set; }
+        public string nome_ator { get; set; }
         [Required]
-        //[DataType(DataType.Date)]
+     
         [DisplayName("Data de nascimento do ator")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString ="{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public string data_nasc_ator { get; set; }
 
 
